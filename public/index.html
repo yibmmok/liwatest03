@@ -9,8 +9,8 @@
 </head>
 <body>
 	<div id="app" v-cloak>
-		<h1>{{ greeting }}</h1>
-		<input @keyup.enter="greet(greeting+'!!!!!!')" v-model="greeting"/>
+		<login-form />
+
 		<hr>
 		<button @click=toggleBox>Toggle Box</button>
 		<div v-if="isVisible" class="box"></div>
@@ -25,7 +25,7 @@
 		[v-cloak] {
 			display:none;
 		}
-		
+
 		button {
 			cursor:pointer;
 		}
@@ -47,6 +47,15 @@
 				}
 			}
 		})
+		app.component('login-form', {
+			template: `
+				<div>
+					<input type="email" />
+					<input type="password" />
+				</div>
+			`
+		})
+
 		app.mount('#app')
 	</script>
 

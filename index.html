@@ -14,7 +14,13 @@
 		<hr>
 		<div v-if="isVisible" class="box"></div>
 	</div>
-	
+	<style>
+		.box {
+			background-color:purple;
+			width:200px;
+			height:200px;
+		}
+	</style>	
 	<script>
 		let app = Vue.createApp({
 			data: function() {
@@ -26,5 +32,6 @@
 		})
 		app.mount('#app')
 	</script>
+
 </body>
 </html>
